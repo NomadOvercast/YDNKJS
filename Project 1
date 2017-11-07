@@ -1,0 +1,37 @@
+var bank = prompt ("How much money do you have?");
+var checkout = 0;
+const spendingThreshhold = 200;
+const availableFunds = bank;
+const phonePrice = 99.99;
+const accessoryPrice = 9.99;
+const tax = 0.08;
+
+
+while  (bank > phonePrice) {	
+
+checkout += phonePrice;
+bank -= phonePrice;
+
+	if (checkout < spendingThreshhold ) {
+
+	checkout += accessoryPrice;
+	bank -= accessoryPrice;
+
+	}
+
+}
+
+checkout *=(1 + tax);
+
+if (checkout < availableFunds) {
+
+console.log ("You have $" + bank.toFixed(2) + " left.");
+console.log ("Your total would be $" + checkout.toFixed(2));
+
+}
+
+else {
+
+console.log ("$" + checkout.toFixed(2) + " You cant afford that!");
+
+}
